@@ -1,0 +1,75 @@
+body{
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+    
+}
+
+.navbar{
+    padding: .8rem;
+}
+
+.navbar-nav li{
+    padding: 1px;
+}
+
+.nav-link{
+    font-size: 1.1em !important;
+}
+
+.logoname{
+    font-size: 1.1em !important;
+}
+
+.bgblack:hover {
+    background-color: black;
+    opacity: 0.5;
+}
+
+.myimage{
+    object-fit: scale-down;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(19, 18, 18);
+    align-self: center;
+}
+
+
+.padsep{
+    margin: 5px;
+}
+
+.heading{
+    font-family: 'Fredoka One', cursive !important ;
+}
+
+.semiblock{
+
+}
+.darksection{
+    background-color: #272935;
+    color: #f8f8f2 !important;
+}
+.lightsection{
+    background-color: ;
+}
+.newsection{
+    margin-top: 2rem;
+}
+
+.nopadding {
+    padding: 0 !important;
+    margin: 0 !important;
+ }
+
+.table {
+    margin: auto;
+    width: 70% !important; 
+ }
+ .centerall{
+     margin: auto;
+ }
+
+ .link{
+     text-decoration: none;
+     color: black;
+ }

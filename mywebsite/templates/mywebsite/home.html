@@ -1,0 +1,123 @@
+{% extends "mywebsite/base.html" %}
+{% load static %}
+
+{% block content %}
+<section>
+    <div class="container-fluid">
+        <div class="row">
+            <img src="" alt="" class="bgblack"
+                style="background-image:url( {% static "mywebsite/images/bgimage.JPG" %} ); width: 100%; height:40em; background-size:cover; background-position: center;  background-attachment: fixed;">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <button class="btn btn-outline-light btn-lg" type="button">Know Me</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<div class="col-lg-12" id="about">
+    <!-- About Section  -->
+    <div class="container-fluid padding bg-light">
+        <div class="sep row padding">
+            <div class="col-md-12 col-lg-8">
+                <h2>About Me</h2>
+                <br>
+                {% for ob in about %}
+                <p class="lead">{{ ob.about_description }}</p>
+                {% endfor %}
+                <br>
+                <hr>
+                <br>
+
+                <div class="row mb-4">
+                    <div class="padsep lead col-lg-5 ml-4">
+                        <h4 class="display-5">Education</h4>
+                        {% for edu in education %}
+                        <i class="fas fa-graduation-cap d-inline-flex"><div class="lead font-weight-bold pl-2 pr-2">{{ edu.degree }}</div></i>
+                        <small class="text-success lead">{{ edu.duration }}</small>
+                        <p><em>{{ edu.institute }}</em></p>
+                        {% endfor %}
+                    </div>
+
+                    <div class="padsep col-lg-5 lead ml-4">
+                        <h4 class="display-5">Interests</h4>
+                        {% for interest in interests %}
+                        <li class="">{{ interest.name }}</li>
+                        {% endfor %}
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-lg-4 d-none d-md-none d-lg-block">
+                {% for ob in about %}
+                <img src="{% static "mywebsite/images/sideimage.jpg" %}" alt="" class="myimage">
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <!-- Skills Section  -->
+    <div class="row">
+        <div class="col-lg-12 bg-secondary pb-4">
+            <h1 class="display-3 text-center font-weight-bold p-2 mb-5 mt-2">Skills</h1>
+            <div class="row">
+                <div class="col-lg-4 text-center mt-2">
+                    <i class="fas fa-code fa-10x"></i>
+                    <h3 class="text-center text-dark font-weight-bold mt-1">Programming</h2>
+                </div>
+                <div class="col-lg-4 text-center mt-2">
+                    <i class="fas fa-code-branch fa-10x"></i>
+                    <h3 class="text-center text-dark font-weight-bold mt-1">Software Development</h2>
+                </div>
+                <div class="col-lg-4 text-center mt-2">
+                    <i class="fas fa-robot fa-10x"></i>
+                    <h3 class="text-center text-dark font-weight-bold mt-1">Robotics</h2>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Projects Section  -->
+    <div class="row" id="projects">
+        <div class="col-lg-12 bg-light pb-4">
+            <h1 class="display-3 text-center font-weight-bold p-2 mb-5 mt-3">Projects</h1>
+            
+        </div>
+    </div>
+    <!-- contact section  -->
+    <div class="row" id="contact">
+        <div class="col-lg-12 bg-secondary pb-4">
+            <h1 class="display-3 text-center font-weight-bold p-2 mb-5 mt-3">Contact</h1>
+            <div class="row">
+                <div class="col-lg-6 align-self-center">
+                        <div class="text-center">
+                            <i class="fas fa-map-marker-alt fa-2x d-inline-flex m-2"><div class="lead font-weight-light p-2">B20, Gaurikund Hostel, IIT Mandi (North Campus), Kamand 175005</div></i>
+                        </div>
+                        <div class="text-center">
+                            <a href="www.linkedin.com/in/harnaman-kaur-40239a1a5" class="link"><i class="fab fa-linkedin fa-2x d-inline-flex m-2"></i></a>
+                            <a href="https://github.com/harnaman-hk" class="link"><i class="fab fa-github fa-2x d-inline-flex m-2"></i></a> 
+                        </div>
+                </div>
+    
+                <div class="col-lg-6 pt-2">
+                <form action="" method="POST">
+                    {% csrf_token %}
+                        <table class="table table-borderless table-hover table-responsive lead">
+                            {{ form.as_table }}
+        
+                        </table>
+                        <div class="text-center">
+                            <button class="btn btn-info btn-lg" type="submit" id="contact_form">Send</button>
+                        </div>
+    
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
